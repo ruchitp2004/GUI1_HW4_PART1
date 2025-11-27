@@ -1,0 +1,69 @@
+<!--   Name: Ruchit Patel
+        Date: 11/24/2025
+        File: index.html
+        HW4 – Using the jQuery Plugin/UI with Your Dynamic Table
+              Part 1: Validation Plugin
+
+        Description: In this HTML file is the structure and layout of my page. It has a heading, a form where the user can 
+        enter values as their input for both X and Y axes and a Container div that displays the table. There are also links 
+        to the external CSS and javaScript file which generates table and has validation logic. The form validates user input 
+        using the jQueryvalidation plugin to make sure the values are within range of -50 to 50. 
+
+        Citation: 
+            https://jqueryvalidation.org/validate/
+            https://jqueryvalidation.org/jQuery.validator.addMethod/
+
+-->
+        
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Project</title>
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="css/table.css">
+
+    <!-- jQuery & validation plugin -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+</head>
+<body>
+    
+    <h1>Interactive Dynamic Table</h1>
+    <hr>
+    <div class="container">
+        <form id="inputform" novalidate>
+
+        <div class="form">
+            <label>Minimum column value X (between -50 to 50) :</label>
+            <input type="number" id="startX" name="startX" placeholder="Enter value" min="-50" max="50" >
+        </div>
+
+        <div class="form">
+            <label>Maximum column value X (between -50 to 50) :</label>
+            <input type="number" id="endX" name="endX" placeholder="Enter value" min="-50" max="50" >
+        </div>
+
+        <div class="form">
+            <label>Minimum row value Y (between -50 to 50) :</label>
+            <input type="number" id="startY" name="startY" placeholder="Enter value" min="-50" max="50" >
+        </div>
+
+        <div class="form">
+            <label>Maximum row value Y (between -50 to 50) :</label>
+            <input type="number" id="endY" name="endY" placeholder="Enter value" min="-50" max="50" > 
+        </div>
+        
+        <button type="submit">Generate Table</button>
+    </form>
+    </div>
+
+    <div id="error-message"></div>
+    <div id="tableContainer" class="table-wrapper"></div>
+
+    <!-- Link JavaScript -->
+    <script src="js/table.js"></script>
+</body>
+</html>
